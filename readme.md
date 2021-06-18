@@ -5,3 +5,5 @@ and Cyber-Security at AMU Poznań.
 
 dataset:
 https://www.kaggle.com/arjunbhasin2013/ccdata
+
+![](27.gif)
