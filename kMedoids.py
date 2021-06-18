@@ -5,7 +5,7 @@ import seaborn as sns
 
 from numpy.random import choice, seed
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import Normalizer
 
 seed(42)
 
@@ -43,9 +43,8 @@ def is_finished(old_medoids, new_medoids):
 
 def kmedoids(num_samples, num_clusters):
     df = pd.read_csv('CC GENERAL.csv', index_col='CUST_ID')
-    df = df[:num_samples]
-    df_scaled = pd.DataFrame(MinMaxScaler().fit_transform(df))
-    df_scaled = df_scaled.fillna(0)
+    df = df[:num_samples].fillna(0)
+    df_scaled = pd.DataFrame(Normalizer().fit_transform(df))
 
     # initialize medoids (at random)
     medoids = initialize_medoids(num_medoids=num_clusters, data=df_scaled)
@@ -67,4 +66,6 @@ def kmedoids(num_samples, num_clusters):
     plt.show()
 
 
-kmedoids(num_samples=500, num_clusters=3)
+for i in range(2, 8):
+    kmedoids(num_samples=500, num_clusters=i)
+    print(i)
