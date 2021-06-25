@@ -43,7 +43,7 @@ def is_finished(old_medoids, new_medoids):
 
 def kmedoids(num_samples, num_clusters):
     df = pd.read_csv('CC GENERAL.csv', index_col='CUST_ID')
-    df = df[:num_samples].fillna(0)
+    df = df[:num_samples].dropna()
     df_scaled = pd.DataFrame(StandardScaler().fit_transform(df))
 
     # initialize medoids (at random)
