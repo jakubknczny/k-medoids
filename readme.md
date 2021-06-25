@@ -8,9 +8,9 @@ https://www.kaggle.com/arjunbhasin2013/ccdata
 
 ![](reg27.gif)
 
-Visualization of clustering first 500 data entries (with regularization).
+Visualization of clustering first 500 data entries (with vector normalization).
 
 ![](norm27.gif)
 
-Visualization of clustering first 500 data entries (with normalization).
+Visualization of clustering first 500 data entries (with standarization).
 
